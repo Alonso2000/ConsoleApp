@@ -19,10 +19,12 @@ namespace ConsoleApp
                 Console.WriteLine("2.Incrementar fecha");
                 Console.WriteLine("3.Diferencia fechas");
                 Console.WriteLine("4.Comparar fechas");
+                Console.WriteLine("5.Mostrar fecha formato largo");
+                Console.WriteLine("6.Volver al menu");
                 Console.WriteLine("Elige una opcion: ");
                 opcion = Console.ReadLine();
                 resultado = Int32.Parse(opcion);
-            } while (resultado < 1 || resultado > 4);
+            } while (resultado < 1 || resultado > 6);
             string d1;
             string m1;
             string a1;
@@ -46,12 +48,14 @@ namespace ConsoleApp
                         int dia = Int32.Parse(d1);
                         DateTime date1 = new DateTime(anio, mes, dia);
                         Console.WriteLine(date1.ToString("dddd").ToUpper());
-                    }catch(Exception e)
+                    }
+                    catch (Exception e)
                     {
                         Console.WriteLine("Ese mes no tiene ese dia");
                     }
                     menuFechas();
                     break;
+
                 case 2:
                     try
                     {
@@ -70,12 +74,14 @@ namespace ConsoleApp
                         i = Console.ReadLine();
                         int inc = Int32.Parse(i);
                         Console.WriteLine(date1.AddDays(inc).ToString("dd/MM/yyyy"));
-                    }catch(Exception e)
+                    }
+                    catch (Exception e)
                     {
                         Console.WriteLine("Ese mes no tiene ese dia");
                     }
                     menuFechas();
                     break;
+
                 case 3:
                     try
                     {
@@ -111,8 +117,9 @@ namespace ConsoleApp
                     {
                         Console.WriteLine("Ese mes no tiene ese dia");
                     }
-                    menuFechas(); ;
+                    menuFechas();
                     break;
+
                 case 4:
                     try
                     {
@@ -142,24 +149,51 @@ namespace ConsoleApp
                         DateTime date2 = new DateTime(anioo, mess, diaa);
                         Console.WriteLine(date2.ToString("dd/MM/yyyy"));
                         int comparacion = date1.CompareTo(date2);
-                        if(comparacion < 0)
+
+                        if (comparacion < 0)
                         {
-                            Console.WriteLine(date1.ToString("dd/MM/yyyy")+" es menor que "+date2.ToString("dd/MM/yyyy"));
-                        }else if(comparacion == 0)
+                            Console.WriteLine(date1.ToString("dd/MM/yyyy") + " es menor que " + date2.ToString("dd/MM/yyyy"));
+                        }
+                        else if (comparacion == 0)
                         {
-                            Console.WriteLine(date1.ToString("dd/MM/yyyy") + " son iguales "+ date2.ToString("dd/MM/yyyy"));
+                            Console.WriteLine(date1.ToString("dd/MM/yyyy") + " son iguales " + date2.ToString("dd/MM/yyyy"));
                         }
                         else
                         {
-                            Console.WriteLine(date1.ToString("dd/MM/yyyy") + " es mayor que "+date2.ToString("dd/MM/yyyy"));
+                            Console.WriteLine(date1.ToString("dd/MM/yyyy") + " es mayor que " + date2.ToString("dd/MM/yyyy"));
                         }
 
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine("Ese mes no tiene ese dia");
-                    };
+                    }
                     break;
+
+                case 5:
+                    try
+                    {
+                        Console.WriteLine("Escribe el dia: ");
+                        d1 = Console.ReadLine();
+                        int dia = Int32.Parse(d1);
+                        Console.WriteLine("Escribe el mes: ");
+                        m1 = Console.ReadLine();
+                        int mes = Int32.Parse(m1);
+                        Console.WriteLine("Escribe el año: ");
+                        a1 = Console.ReadLine();
+                        int anio = Int32.Parse(a1);
+                        DateTime date1 = new DateTime(anio, mes, dia);
+                        Console.WriteLine(date1.ToString("dd/MM/yyyy"));
+                        Console.WriteLine("La fecha en formato largo es "+date1.ToString("dddd dd MMMM yyyy"));
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Introduce una fecha valida");
+                    }
+                    break ;
+
+                    case 6:
+                    break ;
             }
         }
     }
