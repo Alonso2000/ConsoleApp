@@ -1,6 +1,8 @@
-﻿public class Program
+﻿using ConsoleApp;
+
+public class Program
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
         string opcion = "";
         int resultado = 0;
@@ -15,12 +17,13 @@
         } while (resultado < 1 || resultado > 3);
         switch (resultado)
         {
-            /*case 1: Fecha;
+            case 1: Fecha a = new Fecha();
+                a.menuFechas();
                 break;
-            case 2: Libro;
+            /*case 2: Libro;
                 break;
             case 3:Puerto;
                 break;*/
-        }
+        } 
     }
 }
