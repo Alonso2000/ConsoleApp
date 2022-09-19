@@ -11,10 +11,11 @@ public class Program
             Console.WriteLine("1.Fechas");
             Console.WriteLine("2.Libros");
             Console.WriteLine("3.Puerto");
+            Console.WriteLine("4.Salir");
             Console.WriteLine("Elige una opcion: ");
             opcion = Console.ReadLine();
             resultado = Int32.Parse(opcion);
-        } while (resultado < 1 || resultado > 3);
+        } while (resultado < 1 || resultado > 4);
         switch (resultado)
         {
             case 1: Fecha a = new Fecha();
@@ -23,6 +24,8 @@ public class Program
             /*case 2: Libro;
                 break;
             case 3:Puerto;
+                break;
+            case 4: "";
                 break;*/
         } 
     }
