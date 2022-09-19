@@ -1,7 +1,26 @@
-﻿internal class Program
+﻿public class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        string opcion = "";
+        int resultado = 0;
+        do
+        {
+            Console.WriteLine("1.Fechas");
+            Console.WriteLine("2.Libros");
+            Console.WriteLine("3.Puerto");
+            Console.WriteLine("Elige una opcion: ");
+            opcion = Console.ReadLine();
+            resultado = Int32.Parse(opcion);
+        } while (resultado < 1 || resultado > 3);
+        switch (resultado)
+        {
+            /*case 1: Fecha;
+                break;
+            case 2: Libro;
+                break;
+            case 3:Puerto;
+                break;*/
+        }
     }
 }
