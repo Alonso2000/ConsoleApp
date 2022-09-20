@@ -21,9 +21,12 @@ public class Program
             case 1: Fecha a = new Fecha();
                 a.menuFechas();
                 break;
-            /*case 2: Libro;
+            case 2: 
+                Libro lib = new Libro("a","b","c","d");
+                Console.WriteLine(lib);
+                Console.ReadKey();
                 break;
-            case 3:Puerto;
+            /*case 3:Puerto;
                 break;
             case 4: "";
                 break;*/

@@ -9,6 +9,20 @@ namespace ConsoleApp
 {
     public class Fecha
     {
+        /*static int SolicitarEntero(String texto)
+        {
+            bool valido;
+            int num;
+            do
+            {
+                Console.Clear();
+                Console.Write(texto);
+                valido = int.TryParse(Console.ReadLine(), out num);
+                if (!valido) Console.WriteLine("Numero no valido");
+            } while (!valido);
+            return num;
+        }*/
+
         public void menuFechas()
         {
             string opcion = "";
