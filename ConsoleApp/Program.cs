@@ -37,8 +37,7 @@ public class Program
                     Console.WriteLine("2.Ver listado de libros");
                     Console.WriteLine("3.Modificar algun libro de los ya añadidos");
                     Console.WriteLine("4.Eliminar algun libro de los ya añadidos");
-                    Console.WriteLine("5.Eliminar algun libro de los ya añadidos");
-                    Console.WriteLine("6.Salir");
+                    Console.WriteLine("5.Salir");
                     n = Console.ReadLine();
                     nu = Int32.Parse(n);
 
@@ -63,6 +62,28 @@ public class Program
                                 Console.WriteLine(libros[i]);
                         }
                         break;
+                    case 3:
+                          Console.WriteLine("¿Que libro quieres modificar?");
+                          titulo = Console.ReadLine();
+                          for(int i = 0; i< libros.Count; i++)
+                          {
+                              if (libros[i] == titulo)
+                              {
+
+                              }
+                          }
+                          break;
+                        case 4:
+                            Console.WriteLine("¿Que libro quieres eliminar?");
+                            titulo = Console.ReadLine();
+                            for(int i = 0;i < libros.Count; i++)
+                            {
+                                if (libros[0])
+                                {
+                                    libros.RemoveAt(i);
+                                }
+                            }
+                            break;
 
                 }
                 } while (nu < 1 || nu > 6 || acabado == false);
