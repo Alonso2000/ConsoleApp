@@ -1,4 +1,5 @@
 ﻿using ConsoleApp;
+using System.Collections;
 
 public class Program
 {
@@ -21,10 +22,38 @@ public class Program
             case 1: Fecha a = new Fecha();
                 a.menuFechas();
                 break;
-            case 2: 
-                Libro lib = new Libro("a","b","c","d");
-                Console.WriteLine(lib);
-                Console.ReadKey();
+            case 2:
+                string n = "";
+                int nu = 0;
+                string titulo = "";
+                string autor = "";
+                string estilo = "";
+                string editorial = "";
+                ArrayList libros = new ArrayList();
+                do
+                {
+                    Console.WriteLine("1.Insertar libro");
+                    Console.WriteLine("2.Ver listado de libros");
+                    Console.WriteLine("3.Modificar algun libro de los ya añadidos");
+                    Console.WriteLine("4.Eliminar algun libro de los ya añadidos");
+                    Console.WriteLine("5.Eliminar algun libro de los ya añadidos");
+                    Console.WriteLine("6.Salir");
+                    n = Console.ReadLine();
+                    nu = Int32.Parse(n);
+                } while (nu < 1 || nu > 6);
+                switch (nu)
+                {
+                    case 1:
+                        Console.WriteLine("Escribe el titulo:");
+                        titulo = Console.ReadLine();
+                        Console.WriteLine("Escribe el autor:");
+                        autor = Console.ReadLine();
+                        Console.WriteLine("Escribe el estilo");
+                        estilo = Console.ReadLine();
+                        Console.WriteLine("Escribe la editorial");
+                        editorial = Console.ReadLine();
+                        break;
+                }
                 break;
             /*case 3:Puerto;
                 break;
