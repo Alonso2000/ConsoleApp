@@ -30,6 +30,7 @@ public class Program
                 string estilo = "";
                 string editorial = "";
                 ArrayList libros = new ArrayList();
+                bool acabado = false;
                 do
                 {
                     Console.WriteLine("1.Insertar libro");
@@ -40,7 +41,7 @@ public class Program
                     Console.WriteLine("6.Salir");
                     n = Console.ReadLine();
                     nu = Int32.Parse(n);
-                } while (nu < 1 || nu > 6);
+
                 switch (nu)
                 {
                     case 1:
@@ -52,13 +53,26 @@ public class Program
                         estilo = Console.ReadLine();
                         Console.WriteLine("Escribe la editorial");
                         editorial = Console.ReadLine();
+                        Libro lib = new Libro(titulo, autor, estilo, editorial);
+                        libros.Add(lib);
                         break;
+
+                    case 2:
+                        for(int i = 0; i < libros.Count; i++)
+                        {
+                                Console.WriteLine(libros[i]);
+                        }
+                        break;
+
                 }
+                } while (nu < 1 || nu > 6 || acabado == false);
                 break;
-            /*case 3:Puerto;
+            case 3:
+                ;
                 break;
-            case 4: "";
-                break;*/
+            case 4:
+                ;
+                break;
         } 
     }
 }
