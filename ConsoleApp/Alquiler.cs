@@ -44,6 +44,9 @@ namespace ConsoleApp
             set { fecha_final = value; }
         }
 
-
+        public override string ToString()
+        {
+            return $"{{{nameof(Nombre)}={Nombre}, {nameof(Dni)}={Dni}, {nameof(Fecha_inicial)}={Fecha_inicial.ToString()}, {nameof(Fecha_final)}={Fecha_final.ToString()}}}";
+        }
     }
 }

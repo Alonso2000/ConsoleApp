@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-    internal class Barco
+    public class Barco
     {
+        public string matricula;
+        public int eslora;
+        public int anio_fabricacion;
+
+        public Barco(string matricula, int eslora, int anio_fabricacion)
+        {
+            this.matricula = matricula;
+            this.eslora = eslora;
+            this.anio_fabricacion = anio_fabricacion;
+        }
+
+        public override string ToString()
+        {
+            return $"{{}}";
+        }
     }
 }
