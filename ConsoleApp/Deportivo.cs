@@ -8,7 +8,7 @@ namespace ConsoleApp
 {
     public class Deportivo : Barco
     {
-        private int CV = 0;
+        private int CV;
         public Deportivo(string matricula, int eslora, int anio_fabricacion, int caballos) : base(matricula, eslora, anio_fabricacion)
         {
             this.matricula = matricula;

@@ -10,6 +10,7 @@ namespace ConsoleApp
     {
         public int num_mastiles = 0;
 
+
         public Velero(string matricula, int eslora, int anio_fabricacion, int mastiles) : base(matricula, eslora, anio_fabricacion)
         {
             this.matricula = matricula;

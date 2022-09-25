@@ -13,12 +13,12 @@ namespace ConsoleApp
         private DateTime fecha_inicial;
         private DateTime fecha_final;
 
-        public Alquiler(string nombre, string DNI, DateTime fecha_inicial, DateTime fecha_final)
+        public Alquiler()
         {
-            this.nombre = nombre;
-            this.DNI = DNI;
-            this.fecha_inicial = fecha_inicial;
-            this.fecha_final = fecha_final;
+            this.nombre = "";
+            this.DNI = "";
+            this.fecha_inicial = DateTime.Now;
+            this.fecha_final = DateTime.Now;
         }
         public string Nombre
         {
@@ -42,6 +42,39 @@ namespace ConsoleApp
         {
             get { return fecha_final; }
             set { fecha_final = value; }
+        }
+
+        public String alquilerNormal(Barco a, DateTime fechF, DateTime fechI)
+        {
+            TimeSpan difFechas = fechF - fechI;
+            int dias = difFechas.Days;
+            int funcion = (a.eslora * 10) * 12;
+
+            return funcion.ToString();
+        }
+        public String alquilerDeportivo(Deportivo a, DateTime fechI, DateTime fechF, int caballos)
+        {
+            TimeSpan difFechas = fechF - fechI;
+            int dias = difFechas.Days;
+            int funcion = (a.eslora * 10) * 12 + caballos;
+
+            return funcion.ToString();
+        }
+        public String alquilerLujo(Lujo a, DateTime fechI, DateTime fechF, int caballos, int camarotes)
+        {
+            TimeSpan difFechas = fechF - fechI;
+            int dias = difFechas.Days;
+            int funcion = (a.eslora * 10) * 12 + caballos + camarotes;
+
+            return funcion.ToString();
+        }
+        public String alquilerVelero(Velero a, DateTime fechI, DateTime fechF)
+        {
+            TimeSpan difFechas = fechF - fechI;
+            int dias = difFechas.Days;
+            int funcion = (a.eslora * 10) * 12 + a.num_mastiles;
+
+            return funcion.ToString();
         }
 
         public override string ToString()
